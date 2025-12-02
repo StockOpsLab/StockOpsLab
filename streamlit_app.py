@@ -1,8 +1,5 @@
 import streamlit as st
 
-
-
-
 #### CSS
 st.markdown(
     """
@@ -25,13 +22,24 @@ st.markdown(
     unsafe_allow_html=True
 )
 #### CSS
-st.title("📈 StockOpsLab")
-st.subheader("🚧 Application en construction 🚧")
-st.write("Bienvenue sur **StockOpsLab** !")
+st.title("📈 StockOpsLab 2")
+st.subheader("🚧 Under Construction 🚧")
+st.write("Welcome on **StockOpsLab** !")
 
-col1, col2, col3 = st.columns([1,2,1])  # colonne centrale plus large
-with col2:
-    st.title("📈 StockOpsLab")
-    st.subheader("🚧 Application en construction 🚧")
-    st.write("Bienvenue sur **StockOpsLab** !")
+st.markdown(
+    """
+    <div style="text-align: center;">
+        # StockOpsLab
+        ### Application en construction
+        Bienvenue sur **StockOpsLab** !
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+# col1, col2, col3 = st.columns([1,2,1])  # colonne centrale plus large
+# with col2:
+#    st.title("📈 StockOpsLab")
+#    st.subheader("🚧 Application en construction 🚧")
+#    st.write("Bienvenue sur **StockOpsLab** !")
 
