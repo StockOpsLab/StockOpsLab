@@ -29,9 +29,9 @@ st.write("Welcome on **StockOpsLab** !")
 st.markdown(
     """
     <div style="text-align: center;">
-        # StockOpsLab<br>
-        ### Application en construction<br>
-        Bienvenue sur **StockOpsLab** !
+        StockOpsLab<br>
+        Application en construction<br>
+        Bienvenue sur StockOpsLab !
     </div>
     """,
     unsafe_allow_html=True
