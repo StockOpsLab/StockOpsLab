@@ -2,8 +2,8 @@ import streamlit as st
 import requests
 
 # Configuration Supabase
-SUPABASE_URL = "https://xyzcompany.supabase.co"   # remplace par ton URL
-SUPABASE_KEY = "ta_cle_api"                       # remplace par ta clé
+SUPABASE_URL = "https://ymjabtkhikeofdfyltra.supabase.co"   # remplace par ton URL
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InltamFidGtoaWtlb2ZkZnlsdHJhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ2NzE2MjEsImV4cCI6MjA4MDI0NzYyMX0.2fdaFWK5oFz405ECG0qhXN3Z2KCjLS54kuA9XCuEfDM"                       # remplace par ta clé
 
 headers = {
     "apikey": SUPABASE_KEY,
