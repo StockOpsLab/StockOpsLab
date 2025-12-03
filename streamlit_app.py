@@ -11,7 +11,7 @@ headers = {
     "Content-Type": "application/json"
 }
 st.title("StockOpsLab Open source project.")
-st.title("Test connexion Supabase")
+st.write("Test connexion Supabase")
 st.write(" Under construction ")
 
 # Lire tous les enregistrements de la table t_user
