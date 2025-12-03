@@ -6,7 +6,7 @@ key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlt
 
 
 # Nom de la table que tu veux tester
-table = "users"
+table = "t_user"
 
 # Construire l’URL REST
 endpoint = f"{url}/rest/v1/{table}"
