@@ -1,3 +1,34 @@
+import requests
+
+# Remplace par ton URL et ta clé
+url = "https://YOUR_PROJECT.supabase.co"
+key = "YOUR_ANON_KEY"
+
+# Nom de la table que tu veux tester
+table = "users"
+
+# Construire l’URL REST
+endpoint = f"{url}/rest/v1/{table}"
+
+# Headers nécessaires
+headers = {
+    "apikey": key,
+    "Authorization": f"Bearer {key}",
+    "Content-Type": "application/json"
+}
+
+# Faire une requête GET simple
+response = requests.get(endpoint, headers=headers, params={"limit": 1})
+
+if response.status_code == 200:
+    print("Connexion réussie ✅")
+    print(response.json())
+else:
+    print("Erreur ❌", response.status_code, response.text)
+
+
+
+
 import streamlit as st
 from supabase import create_client, Client
 
