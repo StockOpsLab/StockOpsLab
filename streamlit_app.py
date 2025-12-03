@@ -10,8 +10,9 @@ headers = {
     "Authorization": f"Bearer {SUPABASE_KEY}",
     "Content-Type": "application/json"
 }
-
+st.title("StockOpsLab Open source project.")
 st.title("Test connexion Supabase")
+st.write(" Under construction ")
 
 # Lire tous les enregistrements de la table t_user
 if st.button("Afficher les utilisateurs"):
