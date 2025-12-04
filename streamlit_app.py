@@ -10,7 +10,8 @@ headers = {
     "Authorization": f"Bearer {SUPABASE_KEY}",
     "Content-Type": "application/json"
 }
-st.title("StockOpsLab Open source project.")
+st.title("StockOpsLab WMS apps")
+st.title("Open source project for training")
 st.write("Test connexion Supabase")
 st.write(" Under construction ")
 
