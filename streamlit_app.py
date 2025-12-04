@@ -31,7 +31,7 @@ name = st.text_input("Nom")
 email = st.text_input("Email")
 
 if st.button("Ajouter"):
-    new_user = {"fname": name, "email": email}
+    new_user = {"f_name": name, "email": email}
     response = requests.post(
         f"{SUPABASE_URL}/rest/v1/t_user",
         headers=headers,
