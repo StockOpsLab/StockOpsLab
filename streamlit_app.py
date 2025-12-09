@@ -54,6 +54,6 @@ if submitted:
     is_valid = check_password(email, password)
     if is_valid:
         st.success("Connexion réussie ✅")
-        safe_switch_page("pages/homepage.py")  # adapte le nom du fichier
+        safe_switch_page("pages/sol_homepage.py")  # adapte le nom du fichier
     else:
         st.error("Erreur de mot de passe ❌")
