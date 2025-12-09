@@ -16,28 +16,22 @@ st.write("Test connexion Supabase")
 st.write(" Under construction ")
 
 # Formulaire de saisie
-email = st.text_input("Email")
-password = st.text_input("Mot de passe", type="password")
-ok = st.button("OK")
+with st.form("login_form"):
+    email = st.text_input("Email")
+    password = st.text_input("Mot de passe", type="password")
+    submitted = st.form_submit_button("OK")
 
-if ok:
-    # Vérification côté base : on utilise crypt() pour comparer
-    query = f"""
-        SELECT email
-        FROM t_user
-        WHERE email = %s
-          AND password = crypt(%s, password);
-    """
-    # Exécution de la requête SQL via RPC
-    result = supabase.rpc("exec_sql", {"sql": query, "params": [email, password]}).execute()
+if submitted:
+    # Appel RPC à la fonction SQL
+    result = supabase.rpc("check_password", {"p_email": email, "p_password": password}).execute()
+    is_valid = bool(result.data)  # True si mot de passe correct
 
-    if result.data:
-        # Connexion réussie → redirection vers homepage
+    if is_valid:
         st.success("Connexion réussie ✅")
+        # Redirection vers la page pages/homepage.py
         st.switch_page("pages/homepage.py")
     else:
-        # Erreur de mot de passe
-        st.error("Erreur de mot de passe ❌")
+        st.error("Erreur de mot de passe")
 
 
 
