@@ -57,3 +57,9 @@ if submitted:
         safe_switch_page("pages/sol_homepage.py")  # adapte le nom du fichier
     else:
         st.error("Erreur de mot de passe ❌")
+
+# Création du bouton
+if st.button("SignUp"):
+    # Redirection vers la page sol_signup.py
+    st.switch_page("sol_signup.py")
+
