@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+from supabase import create_client
 
 # Configuration Supabase
 SUPABASE_URL = "https://ymjabtkhikeofdfyltra.supabase.co"
@@ -10,6 +11,10 @@ headers = {
     "Authorization": f"Bearer {SUPABASE_KEY}",
     "Content-Type": "application/json"
 }
+
+res = supabase.table("t_user").select("*").execute()
+print(res.data)
+
 st.title("StockOpsLab WMS apps")
 st.title("Open source project for training")
 st.write("Test connexion Supabase")
