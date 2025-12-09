@@ -8,7 +8,7 @@ from supabase import create_client
 SUPABASE_URL = "https://ymjabtkhikeofdfyltra.supabase.co"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InltamFidGtoaWtlb2ZkZnlsdHJhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ2NzE2MjEsImV4cCI6MjA4MDI0NzYyMX0.2fdaFWK5oFz405ECG0qhXN3Z2KCjLS54kuA9XCuEfDM"  
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
-headers = {
+HEADERS = {
     "apikey": SUPABASE_KEY,
     "Authorization": f"Bearer {SUPABASE_KEY}",
     "Content-Type": "application/json"
@@ -24,7 +24,7 @@ def check_password(email: str, password: str) -> bool:
     try:
         url = f"{SUPABASE_URL}/rest/v1/rpc/check_password"
         payload = {"p_email": email, "p_password": password}
-        r = requests.post(url, headers=headers, data=json.dumps(payload))
+        r = requests.post(url, headers=HEADERS, data=json.dumps(payload))
         r.raise_for_status()
         return bool(r.json())
     except Exception as e:
