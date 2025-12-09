@@ -24,7 +24,7 @@ def check_password(email: str, password: str) -> bool:
     try:
         url = f"{SUPABASE_URL}/rest/v1/rpc/check_password"
         payload = {"p_email": email, "p_password": password}
-        r = requests.post(url, headers=HEADERS, data=json.dumps(payload))
+        r = requests.post(url, headers=headers, data=json.dumps(payload))
         r.raise_for_status()
         return bool(r.json())
     except Exception as e:
