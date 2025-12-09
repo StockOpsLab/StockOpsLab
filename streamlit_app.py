@@ -12,32 +12,21 @@ headers = {
     "Content-Type": "application/json"
 }
 
-res = supabase.table("t_user").select("*").execute()
-print(res.data)
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-st.title("StockOpsLab WMS apps")
-st.title("Open source project for training")
-st.write("Test connexion Supabase")
-st.write(" Under construction ")
+st.title("Connexion")
 
-# Formulaire de saisie
-with st.form("login_form"):
+with st.form("login"):
     email = st.text_input("Email")
     password = st.text_input("Mot de passe", type="password")
     submitted = st.form_submit_button("OK")
 
 if submitted:
-    # Appel RPC à la fonction SQL
-    result = supabase.rpc("check_password", {"p_email": email, "p_password": password}).execute()
-    is_valid = bool(result.data)  # True si mot de passe correct
-
-    if is_valid:
-        st.success("Connexion réussie ✅")
-        # Redirection vers la page pages/homepage.py
+    res = supabase.rpc("check_password", {"p_email": email, "p_password": password}).execute()
+    if bool(res.data):
         st.switch_page("pages/homepage.py")
     else:
         st.error("Erreur de mot de passe")
-
 
 
 
